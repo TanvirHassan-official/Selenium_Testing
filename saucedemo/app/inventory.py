@@ -26,7 +26,7 @@ class Inventory:
 
     def get_product_prices(self, driver):
         driver.get(self.url)
-        prices = driver.find_elements(By.CLASS_NAME, "inventory_item_price")
+        prices = driver.find_elements(By.CLASS_NAME, "inventory-item-price")
         return [float(p.text.replace("$", "")) for p in prices]
 
     def sort_by(self, driver, value):
